@@ -1,27 +1,18 @@
-# Cookpedia
+Discover 100+ recipes in your hand with the best recipe. Help you to find the easiest way to cook.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+The Easiest Way
+To Make Your
+Favorite Meal
+Discover 100+ recipes in your hand with the best recipe. Help you to find the easiest way to cook.
+https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png
 
-## Development server
+https://cdn.dummyjson.com/recipe-images/1.webp
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+https://images.unsplash.com/photo-1485921198582-a55119c97421?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&h=500&q=60
+50+ Recipes That Very Quick And Fast
+Find the perfect food ideas to start your day with the quick and easiet way.
+https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png
+Download the App from App Store or
+Google Play for a better experience
+https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png
+https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png
