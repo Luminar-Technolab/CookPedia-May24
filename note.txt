@@ -777,14 +777,14 @@
         - Pipes : used to convert input data to another format
             - Built in Pipes : DatePipe, UpperCasePipe, LowerCasePipe etc..
                 - syntax : data | pipe-name [: 'option']
-            - Custom Pipes : to generate pipe - ng g p pipe-folder/pipe-name, define logic to transfor data inside transform function of the generated pipe
+            - Custom Pipes : to generate pipe - ng g p pipe-folder/pipe-name, define logic to transform data inside transform function of the generated pipe
         - Services : used to provide common logic to be shared with diffrenet component, it can share data with multiple component
             - create service : ng g s service-folder/service-name
         - Asynchronous function handling in Angular : uses 'Observable' to handle Asynchronous function in ts, Observable can handle multiple Asynchronous function at a time. Angular Asynchronous function handling methods are defined in their RxJS library. 
             - subscribe(callback/object) method will return resolved state of observable. 
                 - subscribe method will give Asynchronous function response, if you want only success response then pass call back as an argument in subscribe method. if you want both sucesss and error messages(client/server) we have to use an object. object will has 2 keys, 'next' key value will give you success response, 'error' key value will give you error response
-        - API call in Angular : use 'HttpClient' Class to make api call, methods inside the class return observable
-            - Import provideHttpClient, withFetch in app.config.ts file from @angular/common/http
+        - API call in Angular : use 'HttpClient' Class to make api call, http methods inside the class return observable
+            - Import provideHttpClient in app.config.ts file from @angular/common/http
         - Dependency Injection (DI) : used to transfer dependent class / functions features to injected class/functions. So injected class can access its features. DI always performed in class constructor method, DI performed using provider method in function, DI cannot possible between component classes
             - syntax for DI in constructor: constructor(public/protected/private (access specifier) property-name:Dependent-class-name){ }
         - Angular Component Life cycle Hooks / Methods : we can call all methods in component directly without import
