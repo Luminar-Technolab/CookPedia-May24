@@ -7,7 +7,7 @@
             <br>
             <img class="img-fluid my-5" [src]="recipe.image" alt="no images">
             <div class="d-flex justify-content-between">
-                <button class="btn btn-success">Download The Recipe</button>
+                <button (click)="generatePDF()" class="btn btn-success">Download The Recipe</button>
                 <button class="btn btn-primary">Save The Recipe</button>
             </div>
         </div>
@@ -57,14 +57,16 @@
     <div class="mb-5">
         <h1>Related Recipes</h1>
         <div class="row my-3">
-            <div class="col-lg-3">
-                <div class="p-3" >
-                    <img  src="https://cdn.dummyjson.com/recipe-images/1.webp" class="card-img-top rounded" alt="...">
-                    <div class="card-body mt-2">
-                      <h5 class="card-title"> name</h5>
+            @for (item of allRelatedRecipes; track $index) {
+                <div class="col-lg-3">
+                    <div routerLink="/recipes/{{item._id}}/view" class="p-3" >
+                        <img   [src]="item.image" class="card-img-top rounded" alt="...">
+                        <div class="card-body mt-2">
+                          <h5 class="card-title"> {{item.name}}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div>

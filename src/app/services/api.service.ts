@@ -43,4 +43,14 @@ export class ApiService {
     return  this.http.get(`${this.server_url}/recipe/${id}/view`,this.appendToken())
   }
 
+  //related-recipes?cuisine=Italian
+  getRelatedRecipeAPI(cuisine:string){
+    return  this.http.get(`${this.server_url}/related-recipes?cuisine=${cuisine}`,this.appendToken())
+  }
+
+  //recipes/673461efc82f6dc0ecec8914/download
+  downloadRecipeAPI(id:string,recipeDetails:any){
+    return  this.http.post(`${this.server_url}/recipes/${id}/download`,recipeDetails,this.appendToken())
+  }
+
 }

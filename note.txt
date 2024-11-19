@@ -824,10 +824,10 @@
             - Dynamic routing : path:"/:variable-name"
             - To redirect from one page to another html without refreshing the browser use routerLink attribute in tag and assign path to it. To use routerLink in component , import RouterLink from angular/router in component
             - To access dynamic values from a route in a component : 2 ways to get dynamic parameter from url
-                - Using ActivatedRoute Class
+                - Using ActivatedRoute Class, params property to get from params we have to subscribe
                 - Using @Input() decorator
                     - call withComponentInputBinding() inside provideRouter function 2nd argument inside app.config.ts file
-                    - define dynamic variable of component url inside component along with @Input()
+                    - define dynamic variable of component url inside component along with @Input() dynamic-variable
 
 
 
