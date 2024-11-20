@@ -30,7 +30,7 @@
               @if (isLoggined) {
                 <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
                 <li><a class="dropdown-item" routerLink="/saved-recipes">Saved Recipes</a></li>
-                <li><button class="dropdown-item" >Logout</button></li>
+                <li><button (click)="logout()" class="dropdown-item" >Logout</button></li>
               }@else {
                 <li><a class="dropdown-item" routerLink="/login">Login</a></li>
                 <li><a class="dropdown-item" routerLink="/register">Register</a></li>

@@ -4,12 +4,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import jspdf from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
   selector: 'app-view-recipe',
   standalone: true,
-  imports: [HeaderComponent,RouterLink],
+  imports: [HeaderComponent,RouterLink,FooterComponent],
   templateUrl: './view-recipe.component.html',
   styleUrl: './view-recipe.component.css'
 })
@@ -48,6 +49,16 @@ export class ViewRecipeComponent {
     })
   }
 
+  addDownloadRecipe(){
+    const recipeDetails = {
+      name:this.recipe.name,
+      cuisine:this.recipe.cuisine
+    }
+    this.api.downloadRecipeAPI(this.id,recipeDetails).subscribe((res:any)=>{
+      this.generatePDF()
+    })
+  }
+
   generatePDF(){
     let pdf = new jspdf()
     pdf.setFontSize(16)
@@ -64,9 +75,23 @@ export class ViewRecipeComponent {
     //ingredients instructions
     let head = [["Ingredients Needed","Cooking Instructions"]]
     let body:any = []
+    
     body.push([this.recipe.ingredients,this.recipe.instructions])
     autoTable(pdf,{head,body,startY:50})
     pdf.output('dataurlnewwindow')
     pdf.save('download.pdf')
   }
+
+  saveRecipe(){
+    const {_id,name,cuisine,image} = this.recipe
+    this.api.saveRecipeAPI({id:_id,name,cuisine,image}).subscribe({
+      next:(res:any)=>{
+        alert("Recipe Added to your collection!!!")
+      },
+      error:(reason:any)=>{
+        alert(reason.error)
+      }
+    })
+  }
+  
 }
