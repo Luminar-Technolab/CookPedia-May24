@@ -61,14 +61,14 @@
      <!-- Client Testimonials -->
     <div class="text-center my-5">
         <h1>Client Testimonials</h1>
-        <marquee behavior="" direction="">
-            <div class="row my-5">
-                <div class="col-lg-4 ">
-                   <div class=" rounded border w-100 p-3">
-                        <h5>Name</h5>
-                        <p style="white-space:normal; width: 100%; text-align: justify;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero temporibus consectetur deserunt quidem excepturi voluptas aut dolores repellendus possimus et ipsum, praesentium velit nisi qui reprehenderit iste est error tempora?</p>
+        <marquee>
+            <div class="d-flex my-5">
+                @for (item of allTestimony; track $index) {
+                    <div class=" rounded border w-100 p-3 me-2">
+                        <h5>{{item.name}}</h5>
+                        <p style="white-space:normal; width: 100%; text-align: justify;" >{{item.message}}</p>
                    </div>
-                </div>
+                }
             </div>
         </marquee>
     </div>

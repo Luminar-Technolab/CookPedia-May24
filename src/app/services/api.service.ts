@@ -68,4 +68,25 @@ export class ApiService {
     return  this.http.delete(`${this.server_url}/saved-recipe/${id}/remove`,this.appendToken())
   }
 
+  //all-users
+  getAllUsersAPI(){
+    return  this.http.get(`${this.server_url}/all-users`,this.appendToken())
+  }
+
+  //all-downloads
+  getAllDownloadAPI(){
+    return  this.http.get(`${this.server_url}/all-downloads`,this.appendToken())
+  }
+
+  //all-testimony
+  getAllTestimonyAPI(){
+    return  this.http.get(`${this.server_url}/all-testimony`)
+  }
+
+  //testimony/id?status=Approved
+  updateTestimonyStatusAPI(id:string,status:string){
+    return  this.http.get(`${this.server_url}/testimony/${id}?status=${status}`,this.appendToken())
+  }
+
+
 }

@@ -828,6 +828,11 @@
                 - Using @Input() decorator
                     - call withComponentInputBinding() inside provideRouter function 2nd argument inside app.config.ts file
                     - define dynamic variable of component url inside component along with @Input() dynamic-variable
+        - Modules : used to contains multiple components in a group, 
+            - To generate routing enabled module in angular : ng g m module-name --routing
+            - To generate components inside a module : ng g c module-name/component-name --no-standalone
+            - To lazy load module in angular project (define steps inside app.routes.ts file), to setup lazy load path for module in app.routes.ts file use following
+            {path:"module-path", loadChildren:()=>import('module-path').then(m=>m.module-name)}, we have add lazy load path at the top of routes array 
 
 
 
@@ -835,7 +840,7 @@
 
 
 
-    
+
 
 
 
