@@ -24,4 +24,9 @@ export class RecipeListComponent {
     })
   }
 
+  removeRecipe(id:any){
+    this.api.removeRecipeAPI(id).subscribe((res:any)=>{
+      this.getAllRecipeList()
+    })
+  }
 }

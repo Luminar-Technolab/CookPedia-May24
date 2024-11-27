@@ -92,4 +92,9 @@ export class ApiService {
     return  this.http.post(`${this.server_url}/add-recipe`,recipeDetails,this.appendToken())
   }
 
+  //recipe/id/remove
+  removeRecipeAPI(id:string){
+    return  this.http.delete(`${this.server_url}/recipe/${id}/remove`,this.appendToken())
+  }
+
 }
