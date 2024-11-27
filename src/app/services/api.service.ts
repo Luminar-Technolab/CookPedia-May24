@@ -87,6 +87,9 @@ export class ApiService {
   updateTestimonyStatusAPI(id:string,status:string){
     return  this.http.get(`${this.server_url}/testimony/${id}?status=${status}`,this.appendToken())
   }
-
+  //add-recipe
+  addRecipeAPI(recipeDetails:any){
+    return  this.http.post(`${this.server_url}/add-recipe`,recipeDetails,this.appendToken())
+  }
 
 }

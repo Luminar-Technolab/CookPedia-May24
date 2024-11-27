@@ -8,6 +8,8 @@ import { ManageRecipeComponent } from './manage-recipe/manage-recipe.component';
 import { UsersComponent } from './users/users.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { RequestsComponent } from './requests/requests.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from '../pipes/search.pipe';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { RequestsComponent } from './requests/requests.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    SearchPipe
   ]
 })
 export class AdminModule { }

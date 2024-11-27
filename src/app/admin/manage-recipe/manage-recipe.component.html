@@ -10,7 +10,135 @@
              <a routerLink="/admin/all-request" class="text-decoration-none text-light fw-bolder ms-5 mb-4"> <i class="fa-solid fa-message"></i> Requests</a>
         </div>
         <div class="col">
-            <h1>Welcome Admin</h1>
+            <h1 class="text-center">Add Recipe Details</h1>
+            <div class="container my-5 border text-center rounded p-5 shadow w-75">
+                <img width="100px" src="" alt="no image">
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <div class="mb-2">
+                            <input placeholder="Recipe Name" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <input placeholder="Recipe Preparation Time" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label for="cuisine">Choose Cuisine Type</label>
+                            <select name="cuisine" id="cuisine" class="form-control">
+                                <option disabled selected hidden>Choose Cuisine Type</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Asian">Asian</option>
+                                <option value="American">American</option>
+                                <option value="Mexican">Mexican</option>
+                                <option value="Pakistani">Pakistani</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Thai">Thai</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Turkish">Turkish</option>
+                                <option value="Smoothie">Smoothie</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <input placeholder="Recipe Image URL" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <div class="d-flex align-items-center mb-2">
+                                <textarea placeholder="Recipe Ingredients" class="form-control"></textarea>
+                                <button class="btn btn-primary ms-2">+</button>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <input placeholder="Ingredients" type="text" class="form-control">
+                                <button class="btn  ms-2"><i class="fa-solid fa-trash text-danger"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-2">
+                            <input placeholder="Recipe Cooking Time in Minutes" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <input placeholder="Recipe Servings (ex: 4)" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label for="cuisine">Choose Mode of Cooking</label>
+                            <select name="cuisine" id="cuisine" class="form-control">
+                                <option disabled selected hidden>Choose Mode of Cooking</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <input placeholder="Recipe Calorie Per Servings (ex: 350)" type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <div class="d-flex align-items-center mb-2">
+                                <textarea placeholder="Recipe Cooking Instructions" class="form-control"></textarea>
+                                <button class="btn btn-primary ms-2">+</button>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <input placeholder="Instructions" type="text" class="form-control">
+                                <button class="btn  ms-2"><i class="fa-solid fa-trash text-danger"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="border rounded p-2">
+                        <span class="mb-2">Choose Meal Type of the Recipe : </span>
+                        <div class="d-flex flex-wrap">
+                            <div class="border rounded p-1 me-2">
+                                <label for="Dinner">
+                                    <input type="checkbox" id="Dinner">
+                                    Dinner
+                                </label>
+                            </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Lunch">
+                                    <input type="checkbox" id="Lunch">
+                                    Lunch
+                                </label>
+                            </div>
+                           <div class="border rounded p-1 me-2">
+                                <label for="Snack">
+                                    <input type="checkbox" id="Snack">
+                                    Snack
+                                </label>
+                           </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Dessert">
+                                    <input type="checkbox" id="Dessert">
+                                    Dessert
+                                </label>
+                            </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Appetizer">
+                                    <input type="checkbox" id="Appetizer">
+                                    Appetizer
+                                </label>
+                            </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Breakfast">
+                                    <input type="checkbox" id="Breakfast">
+                                    Breakfast
+                                </label>
+                            </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Beverage">
+                                    <input type="checkbox" id="Beverage">
+                                    Beverage
+                                </label>
+                            </div>
+                            <div class="border rounded p-1 me-2">
+                                <label for="Salad">
+                                    <input type="checkbox" id="Salad">
+                                    Salad
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
 </div>
