@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RecipeModel } from '../models/recipeModel';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
@@ -10,12 +10,29 @@ import { Router } from '@angular/router';
 })
 export class ManageRecipeComponent {
 
+  @Input() id!:string
   recipeDetails:RecipeModel = {}
-  ingredients:string[] = []
-  instructions:string[] = []
-  mealType:string[] = []
+  ingredients:any = []
+  instructions:any = []
+  mealType:any = []
 
   constructor(private api:ApiService,private router:Router){}
+
+  ngOnInit(){
+    console.log(this.id);
+    if(this.id){
+      this.getRecipeDetails(this.id)
+    }
+  }
+
+  getRecipeDetails(id:string){
+    this.api.viewRecipeAPI(id).subscribe((res:any)=>{
+      this.recipeDetails = res
+      this.instructions = this.recipeDetails.instructions
+      this.ingredients = this.recipeDetails.ingredients
+      this.mealType = this.recipeDetails.mealType
+    })
+  }
 
   addIngredients(value:string){
     this.ingredients.push(value)
@@ -41,12 +58,16 @@ export class ManageRecipeComponent {
     }
   }
 
+  removeMealType(meal:string){
+    this.mealType = this.mealType.filter((item:string)=>item!=meal)
+  }
+
   addRecipe(){
     this.recipeDetails.ingredients = this.ingredients
     this.recipeDetails.instructions = this.instructions
     this.recipeDetails.mealType = this.mealType
     const {name,ingredients,instructions,caloriesPerServing,servings,cookTimeMinutes,prepTimeMinutes,mealType,image,cuisine,difficulty} = this.recipeDetails
-    if(name && ingredients.length>0 && instructions.length>0 && servings && cookTimeMinutes && prepTimeMinutes && mealType.length>0 && image && cuisine && difficulty && caloriesPerServing){
+    if(name && ingredients!.length>0 && instructions!.length>0 && servings && cookTimeMinutes && prepTimeMinutes && mealType!.length>0 && image && cuisine && difficulty && caloriesPerServing){
       this.api.addRecipeAPI(this.recipeDetails).subscribe({
         next:(res:any)=>{
           alert("Recipe added successfully!!!")
@@ -63,6 +84,25 @@ export class ManageRecipeComponent {
           this.instructions = []
           this.mealType =[]
         }
+      })
+    }else{
+      alert("Please fill the form completely!!!")
+    }
+  }
+
+  editRecipe(){
+    this.recipeDetails.ingredients = this.ingredients
+    this.recipeDetails.instructions = this.instructions
+    this.recipeDetails.mealType = this.mealType
+    const {name,ingredients,instructions,caloriesPerServing,servings,cookTimeMinutes,prepTimeMinutes,mealType,image,cuisine,difficulty} = this.recipeDetails
+    if(name && ingredients!.length>0 && instructions!.length>0 && servings && cookTimeMinutes && prepTimeMinutes && mealType!.length>0 && image && cuisine && difficulty && caloriesPerServing){
+      this.api.updateRecipeAPI(this.id,this.recipeDetails).subscribe((res:any)=>{
+        alert("Recipe Updated successfully!!!")
+        this.router.navigateByUrl("/admin/all-recipes")
+        this.recipeDetails = {}
+        this.ingredients =[]
+        this.instructions = []
+        this.mealType =[]
       })
     }else{
       alert("Please fill the form completely!!!")

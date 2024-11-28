@@ -10,6 +10,9 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { RequestsComponent } from './requests/requests.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from '../pipes/search.pipe';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { SearchPipe } from '../pipes/search.pipe';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    SearchPipe
+    SearchPipe,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class AdminModule { }

@@ -10,7 +10,12 @@
              <a routerLink="/admin/all-request" class="text-decoration-none text-light fw-bolder ms-5 mb-4"> <i class="fa-solid fa-message"></i> Requests</a>
         </div>
         <div class="col">
-            <h1 class="text-center">Add Recipe Details</h1>
+            @if (id) {
+                <h1 class="text-center">Update Recipe Details</h1>
+            }@else {
+                <h1 class="text-center">Add Recipe Details</h1>
+            }
+            
             <div class="container my-5 border text-center rounded p-5 shadow w-75">
                 @if (recipeDetails.image) {
                     <img width="100px" [src]="recipeDetails.image" alt="no image">
@@ -96,9 +101,16 @@
                 <div class="mb-3">
                     <div class="border rounded p-2">
                         <span class="mb-2">Choose Meal Type of the Recipe :
-                            @for (item of mealType; track $index) {
-                                <span class="me-2 border rounded p-1"> {{item}} </span>
+                            @if (id) {
+                                @for (item of mealType; track $index) {
+                                    <span class="me-2 border rounded p-1"> {{item}} <button (click)="removeMealType(item)" class="btn"><i class="fa-solid fa-close"></i></button> </span>
+                                }
+                            }@else {
+                                @for (item of mealType; track $index) {
+                                    <span class="me-2 border rounded p-1"> {{item}} </span>
+                                }
                             }
+                            
                         </span>
                         <div class="d-flex flex-wrap my-3">
                             <div class="border rounded p-1 me-2">
@@ -153,7 +165,12 @@
                     </div>
                     
                 </div>
-                <button (click)="addRecipe()" class="btn btn-primary">Add Recipe</button>
+                @if (id) {
+                    <button (click)="editRecipe()"  class="btn btn-primary">Update Recipe</button>
+                }@else {
+                    <button (click)="addRecipe()" class="btn btn-primary">Add Recipe</button>
+                }
+                
             </div>
         </div>
     </div>

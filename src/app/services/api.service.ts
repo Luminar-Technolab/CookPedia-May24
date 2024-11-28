@@ -96,5 +96,9 @@ export class ApiService {
   removeRecipeAPI(id:string){
     return  this.http.delete(`${this.server_url}/recipe/${id}/remove`,this.appendToken())
   }
+  //recipe/6745959c7b344f058d0bae73/edit
+  updateRecipeAPI(id:string,recipeDetails:any){
+    return  this.http.put(`${this.server_url}/recipe/${id}/edit`,recipeDetails,this.appendToken())
+  }
 
 }
