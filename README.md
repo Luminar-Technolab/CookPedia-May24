@@ -16,3 +16,23 @@ Download the App from App Store or
 Google Play for a better experience
 https://freepngimg.com/download/android/67006-app-play-google-android-store-free-clipart-hd.png
 https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png
+
+
+[
+              {
+                name:'Italian',
+                y:4
+              },
+              {
+                name:'Asian',
+                y:2
+              },
+              {
+                name:'Mexiacan',
+                y:1
+              },
+              {
+                name:'Indian',
+                y:1
+              }
+            ]

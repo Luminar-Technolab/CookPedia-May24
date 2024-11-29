@@ -55,6 +55,7 @@ export class ViewRecipeComponent {
       cuisine:this.recipe.cuisine
     }
     this.api.downloadRecipeAPI(this.id,recipeDetails).subscribe((res:any)=>{
+      this.api.getChartDownloadData()
       this.generatePDF()
     })
   }

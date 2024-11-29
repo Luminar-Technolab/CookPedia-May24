@@ -19,53 +19,40 @@ export class DashboardComponent {
   requestCount:number = 0
   
   constructor(private api:ApiService,private router:Router){
-    this.chartOptions = {
-      chart :{
-        type :'bar'
-      },
-      title:{
-        text:'Analysis of Download Recipes Based on Cuisine',
-        align:'left'
-      },
-      xAxis:{
-        type:'category'
-      },
-      yAxis:{
+    if(localStorage.getItem("chart")){
+      let chartData = JSON.parse(localStorage.getItem("chart")||"")
+      this.chartOptions = {
+        chart :{
+          type :'bar'
+        },
         title:{
-          text:"Total Download Recipe Count"
-        }
-      },
-      legend:{
-        enabled:false
-      },
-      credits:{
-        enabled:false
-      },
-      series:[
-        {
-          name:"Cuisine",
-          colorByPoint:true,
-          type:'bar',
-          data:[
-            {
-              name:'Italian',
-              y:4
-            },
-            {
-              name:'Asian',
-              y:2
-            },
-            {
-              name:'Mexiacan',
-              y:1
-            },
-            {
-              name:'Indian',
-              y:1
-            }
-          ]
-        }
-      ]
+          text:'Analysis of Download Recipes Based on Cuisine',
+          align:'left'
+        },
+        xAxis:{
+          type:'category'
+        },
+        yAxis:{
+          title:{
+            text:"Total Download Recipe Count"
+          }
+        },
+        legend:{
+          enabled:false
+        },
+        credits:{
+          enabled:false
+        },
+        series:[
+          {
+            name:"Cuisine",
+            colorByPoint:true,
+            type:'bar',
+            data: chartData
+          }
+        ]
+      }
+
     }
   }
 
@@ -73,9 +60,7 @@ export class DashboardComponent {
     this.getUserCount()
     this.getRecipeCount()
     this.getDownloadCount()
-    this.getRequestCount()
-   
-   
+    this.getRequestCount()   
   }
   
   logout(){

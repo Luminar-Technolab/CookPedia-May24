@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  server_url = "https://cookpedia-server-may24.onrender.com"
+  // server_url = "https://cookpedia-server-may24.onrender.com"
+  server_url = "http://localhost:3000"
 
   constructor(private http:HttpClient) { }
 
@@ -103,6 +104,26 @@ export class ApiService {
 //user/:id/edit
   updateUserAPI(userdetails:any){
     return  this.http.put(`${this.server_url}/user/edit`,userdetails,this.appendToken()) 
+  }
+
+  getChartDownloadData(){
+    let downloadList:any = []
+    let output:any = {}
+    this.getAllDownloadAPI().subscribe((res:any)=>{
+      res.forEach((item:any)=>{
+        let cuisine = item.recipeCuisine
+        let currCount = item.count
+        if(output.hasOwnProperty(cuisine)){
+          output[cuisine] += currCount
+        }else{
+          output[cuisine] = currCount
+        }
+      })
+      for(let data in output){
+        downloadList.push({name:data,y:output[data]})
+      }
+      localStorage.setItem("chart",JSON.stringify(downloadList))
+    })
   }
 
 }
