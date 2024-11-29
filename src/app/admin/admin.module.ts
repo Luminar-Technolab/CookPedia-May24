@@ -13,7 +13,7 @@ import { SearchPipe } from '../pipes/search.pipe';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import {HighchartsChartModule} from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     SearchPipe,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HighchartsChartModule
   ]
 })
 export class AdminModule { }

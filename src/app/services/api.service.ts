@@ -100,5 +100,9 @@ export class ApiService {
   updateRecipeAPI(id:string,recipeDetails:any){
     return  this.http.put(`${this.server_url}/recipe/${id}/edit`,recipeDetails,this.appendToken())
   }
+//user/:id/edit
+  updateUserAPI(userdetails:any){
+    return  this.http.put(`${this.server_url}/user/edit`,userdetails,this.appendToken()) 
+  }
 
 }

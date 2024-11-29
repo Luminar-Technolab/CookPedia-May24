@@ -833,7 +833,12 @@
             - To generate components inside a module : ng g c module-name/component-name --no-standalone
             - To lazy load module in angular project (define steps inside app.routes.ts file), to setup lazy load path for module in app.routes.ts file use following
             {path:"module-path", loadChildren:()=>import('module-path').then(m=>m.module-name)}, we have add lazy load path at the top of routes array 
-
+        - Angular Guards : To protect route in angular , use command - ng g g guard-folder/guard-name
+            1. CanActivate: Determines if a route can be activated.
+            2. CanActivateChild: Determines if a child route can be activated.
+            3. CanDeactivate: Determines if a route can be deactivated.
+            4. Resolve Pre-fetches data before a route is activated.
+            5. CanLoad: Determines if a module can be loaded lazily.
 
 
 
